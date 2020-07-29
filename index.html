@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles-old.css">
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -87,16 +87,75 @@
                     
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a href="#reserve_table" class="btn btn-warning btn-block" 
-                        data-toggle="tooltip" 
-                        title="Or call us at <br><strong>+857 1234567822</strong></br>"
-                        data-placement="bottom"
-                        data-html="true">Reserve Table
+                    <a  class="btn btn-warning btn-block" 
+                        data-toggle="modal" data-target="#formModal">
+                        Reserve Table
                     </a>
                 </div>
             </div>
         </div>
     </header>
+
+    <div id="formModal" class="modal fade" role="dialogue">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve Table</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="number of guests" class="col-12 col-md-2 col-form-label">Number of Guests</label>
+                            <div class="col-12 col-md-10">
+                                <input type="radio" name="radsize" id="1" value="1" checked>
+                                <label for="1">1</label>
+                                <input type="radio" name="radsize" id="2" value="2">
+                                <label for="2">2</label>
+                                <input type="radio" name="radsize" id="3" value="3">
+                                <label for="3">3</label>
+                                <input type="radio" name="radsize" id="4" value="4">
+                                <label for="4">4</label>
+                                <input type="radio" name="radsize" id="5" value="5">
+                                <label for="5">5</label>
+                                <input type="radio" name="radsize" id="6" value="6">
+                                <label for="6">6</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="section" class="col-12 col-md-2 col-form-label">Section</label>
+                            <div class="col-12 col-md-10 btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-success active">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Non-Smoking
+                                </label>
+                                <label class="btn btn-danger">
+                                    <input type="radio" name="options" id="option2" autocomplete="off">Smoking
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="date and time" class="col-12 col-md-2 col-form-label">Data and Time</label>
+                            <div class="col-12 col-md-5">
+                                <input type="" class="form-control" id="date" name="date" placeholder="Date">
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <input type="" class="form-control" id="time" name="time" placeholder="Time">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-md-2 col-md-10">
+                                <button type="submit" class="btn btn-primary">Reserve</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row row-content">
@@ -289,10 +348,6 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
 
         $(document).ready(function(){
             $('#mycarousel').carousel({ interval: 2000 });
